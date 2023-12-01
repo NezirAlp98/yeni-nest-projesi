@@ -4,7 +4,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('users')
-export class UserController {
+export class UsersController {
   constructor(private readonly usersService: UsersService) {}
   @Get()
   async getUsers() {
@@ -12,21 +12,21 @@ export class UserController {
   }
 
   @Get(':id')
-  async getNote(@Param('id') id:string){
-    return this.usersService.getNote(id)
+  async getUser(@Param('id') id:string){
+    return this.usersService.getUser(id)
   }
 
   @Post()
-  async createNote(@Body() createUserDto:CreateUserDto){
-    return this.usersService.insertNote(createUserDto);
+  async createUser(@Body() createUserDto:CreateUserDto){
+    return this.usersService.insertUser(createUserDto);
   }
   @Patch(':id')
-  async updateNote(@Param('id') id:string,@Body() updateUserDto:UpdateUserDto){
-    return this.usersService.updateNote(id,updateUserDto)
+  async updateUser(@Param('id') id:string,@Body() updateUserDto:UpdateUserDto){
+    return this.usersService.updateUser(id,updateUserDto)
   }
 
   @Delete(':id')
-  async deleteNote(@Param('id') id:string){
-    return this.usersService.deleteNote(id)
+  async deleteUser(@Param('id') id:string){
+    return this.usersService.deleteUser(id)
   }
 }

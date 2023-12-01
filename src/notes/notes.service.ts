@@ -23,7 +23,7 @@ export class NotesService {
     return note;
   }
 
-  async insertNote(payload:CreateNoteDto){
+  async insertNote(payload:CreateNoteDto){ //dto'da şartlar belirtilir
     const createdNote=new this.notesModel(payload)
     const res=await createdNote.save()
 

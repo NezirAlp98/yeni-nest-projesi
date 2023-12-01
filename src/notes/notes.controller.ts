@@ -6,6 +6,7 @@ import { UpdateNoteDto } from './dto/update-note.dto';
 @Controller('notes')
 export class NotesController {
   constructor(private readonly notesService: NotesService) {}
+  
   @Get()
   async getNotes() {
     return this.notesService.getNotes();
